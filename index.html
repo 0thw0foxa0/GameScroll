@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<style>
+    #maxscroll{
+        animation: bounce .5s linear infinite alternate;
+    }
+    @keyframes bounce{
+        to{
+            transform: scale(1.3);
+            text-shadow: 0 0 20px rgb(226 232 240 / 1);
+        }
+    }
+    #scrollpx{
+        animation: propeler 1s linear infinite alternate;
+    }
+    @keyframes propeler{
+        to{
+            transform: perspective(500px) translateZ(150px) translateY(-50px) rotate(5deg);
+            text-shadow: 0 0 20px rgb(226 232 240 / 1);
+        }
+    }
+    .bars{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .bar{
+        background: #fff;
+        width: 5px;
+        height: 10px;
+    }
+    @keyframes music{
+        to{
+            height:40px;
+        }
+    }
+    .bar:nth-child(1){
+        animation-delay: .1s;
+    }
+    .bar:nth-child(2){
+        animation-delay: .3s;
+    }
+    .bar:nth-child(3){
+        animation-delay: .2s;
+    }
+    .bar:nth-child(4){
+        animation-delay: .6s;
+    }
+    .bar:nth-child(5){
+        animation-delay: .3s;
+    }
+    .bar:nth-child(6){
+        animation-delay: .6s;
+    }
+    .bar:nth-child(7){
+        animation-delay: .2s;
+    }
+    .bar:nth-child(8){
+        animation-delay: .3s;
+    }
+    .bar:nth-child(9){
+        animation-delay: .1s;
+    }
+    #play:hover{
+        box-shadow: 0 0 10px rgba(255 255 255/.5);
+        transform: perspective(500px) translateZ(40px);
+    }
+    .play{
+        animation: music .6s linear infinite alternate;
+    }
+</style>
+<body class="bg-gradient-to-tr from-purple-500 to-blue-500"> 
+    <audio src="KHard_bass_-_Vse_v_sportivkakh_adidas_10249.mp3" id="music"></audio>
+    <div class="absolute h-[100px] left-96 flex items-center top-20 gap-4">
+        <button onclick="" id="play" class="rounded-full p-2 bg-purple-400 transition">
+            <img id="icon" src="./play.png" alt="" width="20px" class="relative">
+        </button>
+        <div class="bars">
+            <div id="Barchik"  class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+            <div id="Barchik" class="bar rounded-xl"></div>
+        </div>
+    </div>
+    <div class="container mx-auto flex items-center justify-center h-screen text-center">
+        <div  class="relative" id="scrollpx">
+            <span id="TextScroll" class="text-4xl text-slate-200 font-semibold">Скроль как можно быстрее  (●'◡'●)</span>
+        </div>
+        <div class="" id="maxscroll">
+            <span id="showmax" class="text-4xl text-slate-200 font-semibold">
+            </span>    
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
